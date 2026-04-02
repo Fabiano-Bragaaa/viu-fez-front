@@ -1,9 +1,12 @@
-import { Text, View } from "react-native";
+import { Text } from "@components";
+import { View } from "react-native";
 
 export function Onboarding() {
   return (
     <View className="flex-1 items-center justify-center">
-      <Text className="text-red-500">Onboarding</Text>
+      <Text size="title-md" className="text-red-950">
+        Onboarding
+      </Text>
     </View>
   );
 }
