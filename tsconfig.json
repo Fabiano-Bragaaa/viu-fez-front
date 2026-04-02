@@ -1,7 +1,23 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "@assets": ["./src/assets"],
+      "@components": ["./src/components"],
+      "@routes": ["./src/routes"],
+      "@screens": ["./src/screens"],
+      "@utils": ["./src/utils"],
+      "@theme": ["./src/theme"],
+      "@hooks": ["./src/hooks"],
+      "@translate": ["./src/translate"],
+      "@domain": ["./src/domain"],
+      "@services": ["./src/services"],
+      "@api": ["./src/api"],
+      "@infra": ["./src/infra"],
+      "@errors": ["./src/errors"]
+    }
   },
   "include": ["**/*.ts", "**/*.tsx", "uniwind-types.d.ts"]
 }
