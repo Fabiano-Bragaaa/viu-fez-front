@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { colors } from "@theme";
 import { ActivityIndicator, View } from "react-native";
 
-import { AuthStack } from "./auth-stack";
+import { OnboardingStack } from "./onboarding-stack";
 
 export function Routes() {
   const { fontsLoaded } = useAppFonts();
@@ -18,7 +18,7 @@ export function Routes() {
 
   return (
     <NavigationContainer>
-      <AuthStack />
+      <OnboardingStack />
     </NavigationContainer>
   );
 }
