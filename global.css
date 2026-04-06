@@ -6,6 +6,7 @@
 @source "./node_modules/heroui-native/lib";
 
 @theme {
+  --color-white: #ffffff;
   --color-background: #f6f6f6;
   --color-foreground: #2d2f2f;
   --color-card: #ffffff;
