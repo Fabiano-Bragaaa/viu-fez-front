@@ -26,10 +26,10 @@ export const buttonContainer = cva(
 );
 
 export const buttonIndicatorColor: Record<ButtonPreset, string> = {
-  primary: "#FFFFFF",
+  primary: colors.white,
   outline: colors.primary,
   ghost: colors.primary,
-  danger: "#FFFFFF",
+  danger: colors.white,
 };
 
 export const buttonLabel = cva("", {
