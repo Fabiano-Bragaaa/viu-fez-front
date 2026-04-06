@@ -1,17 +1,21 @@
 @import "tailwindcss";
 @import "uniwind";
 
+@import "heroui-native/styles";
+
+@source "./node_modules/heroui-native/lib";
+
 @theme {
-  --color-background: #F6F6F6;
-  --color-foreground: #2D2F2F;
-  --color-card: #FFFFFF;
-  --color-muted: #DBDDDD;
-  --color-primary: #00694B;
-  --color-primary-light: #1D9E75;
-  --color-primary-glow: #8CFECE;
-  --color-primary-frost: #E6FFF5;
-  --color-secondary: #06D6B4;
-  --color-tertiary: #00D9FE;
+  --color-background: #f6f6f6;
+  --color-foreground: #2d2f2f;
+  --color-card: #ffffff;
+  --color-muted: #dbdddd;
+  --color-primary: #00694b;
+  --color-primary-light: #1d9e75;
+  --color-primary-glow: #8cfece;
+  --color-primary-frost: #e6fff5;
+  --color-secondary: #06d6b4;
+  --color-tertiary: #00d9fe;
 
   --text-display-lg: 3.5rem;
   --text-headline-md: 1.75rem;
