@@ -22,6 +22,7 @@ module.exports = function (api) {
             "@api": "./src/api",
             "@infra": "./src/infra",
             "@errors": "./src/errors",
+            "@types": "./src/types",
           },
         },
       ],
