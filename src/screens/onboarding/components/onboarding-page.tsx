@@ -1,9 +1,7 @@
-import { Text } from "@components";
-import { Dimensions, Pressable, View } from "react-native";
+import { DotIndicator, Text } from "@components";
+import { Pressable, View } from "react-native";
 
 import { type OnboardingPageItem } from "../onboarding-data";
-
-const SCREEN_WIDTH = Dimensions.get("window").width;
 
 export type OnboardingPageProps = OnboardingPageItem & {
   onPressNext: () => void;
@@ -20,18 +18,11 @@ export function OnboardingPage({
   onPressSkip,
 }: OnboardingPageProps) {
   return (
-    <View style={{ width: SCREEN_WIDTH }} className="flex-1 bg-primary-frost">
+    <View className="flex-1 bg-primary-frost">
       <View className="flex-1 items-center justify-center" />
 
       <View className="bg-card rounded-t-3xl px-6 pb-12 pt-8 items-center gap-6">
-        <View className="flex-row gap-2 items-center">
-          {Array.from({ length: total }).map((_, i) => (
-            <View
-              key={i}
-              className={`h-2 rounded-full ${i === index ? "w-6 bg-primary" : "w-2 bg-muted"}`}
-            />
-          ))}
-        </View>
+        <DotIndicator total={total} activeIndex={index} />
 
         <View className="items-center gap-3">
           <Text
