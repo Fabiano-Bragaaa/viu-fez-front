@@ -1,4 +1,5 @@
-import { DotIndicator, Text } from "@components";
+import { animations } from "@assets";
+import { Animation, DotIndicator, Text } from "@components";
 import { Pressable, View } from "react-native";
 
 import { type OnboardingPageItem } from "../onboarding-data";
@@ -14,12 +15,20 @@ export function OnboardingPage({
   index,
   total,
   isLast,
+  animation,
   onPressNext,
   onPressSkip,
 }: OnboardingPageProps) {
   return (
     <View className="flex-1 bg-primary-frost">
-      <View className="flex-1 items-center justify-center" />
+      <View className="flex-1 items-center justify-center">
+        <Animation
+          source={animations[animation]}
+          style={{ width: 300, height: 300 }}
+          autoPlay
+          loop
+        />
+      </View>
 
       <View className="bg-card rounded-t-3xl px-6 pb-12 pt-8 items-center gap-6">
         <DotIndicator total={total} activeIndex={index} />
