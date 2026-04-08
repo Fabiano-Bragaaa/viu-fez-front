@@ -31,6 +31,7 @@ export function Button({
   return (
     <HeroButton
       isDisabled={isButtonDisabled}
+      variant="ghost"
       className={twMerge(
         buttonContainer({ preset, disabled: isButtonDisabled }),
         className,
