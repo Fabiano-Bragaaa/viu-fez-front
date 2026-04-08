@@ -1,2 +1,4 @@
+export * from "./animation/animation";
 export * from "./button/button";
+export * from "./dot-indicator/dot-indicator";
 export * from "./text/text";
