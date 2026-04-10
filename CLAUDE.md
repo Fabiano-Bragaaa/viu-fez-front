@@ -2,3 +2,7 @@
 @.claude/instructions/code-style.md
 @.claude/instructions/errors.md
 @.claude/instructions/components.md
+@.claude/instructions/theme.md
+@.claude/instructions/typescript.md
+@.claude/instructions/git-flow.md
+@.claude/instructions/functions.md
