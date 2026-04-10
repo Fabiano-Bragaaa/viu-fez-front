@@ -3,22 +3,35 @@ import { NavigationContainer } from "@react-navigation/native";
 import { colors } from "@theme";
 import { ActivityIndicator, View } from "react-native";
 
+import { AppStack } from "./app-stack";
+import { AuthStack } from "./auth-stack";
 import { OnboardingStack } from "./onboarding-stack";
+import { type Stacks, useRouter } from "./use-router";
+
+function LoadingScreen() {
+  return (
+    <View className="flex-1 bg-background items-center justify-center">
+      <ActivityIndicator size="large" color={colors.primary} />
+    </View>
+  );
+}
+
+const stacks: Record<Stacks, React.ReactNode> = {
+  loading: <LoadingScreen />,
+  auth: <AuthStack />,
+  onboarding: <OnboardingStack />,
+  app: <AppStack />,
+};
 
 export function Routes() {
   const { fontsLoaded } = useAppFonts();
+  const stack = useRouter();
 
   if (!fontsLoaded) {
-    return (
-      <View className="flex-1 bg-background">
-        <ActivityIndicator size="large" color={colors.primary} />
-      </View>
-    );
+    return <LoadingScreen />;
   }
 
-  return (
-    <NavigationContainer>
-      <OnboardingStack />
-    </NavigationContainer>
-  );
+  const Stack = stacks[stack];
+
+  return <NavigationContainer>{Stack}</NavigationContainer>;
 }

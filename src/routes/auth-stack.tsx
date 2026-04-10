@@ -1,21 +1,16 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View } from "react-native";
+import { Login } from "@screens";
 
 export type AuthStackParamList = {
   Login: undefined;
 };
 
-const { Navigator, Screen } =
-  createNativeStackNavigator<AuthStackParamList>();
-
-function LoginPlaceholder() {
-  return <View className="flex-1 bg-background" />;
-}
+const { Navigator, Screen } = createNativeStackNavigator<AuthStackParamList>();
 
 export function AuthStack() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen name="Login" component={LoginPlaceholder} />
+      <Screen name="Login" component={Login} />
     </Navigator>
   );
 }
