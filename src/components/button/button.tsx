@@ -1,6 +1,7 @@
 import { type DistributiveOmit } from "@types";
 import { Button as HeroButton, type ButtonRootProps } from "heroui-native";
-import { ActivityIndicator } from "react-native";
+import { type ReactNode } from "react";
+import { ActivityIndicator, View } from "react-native";
 import { twMerge } from "tailwind-merge";
 
 import { Text } from "../text/text";
@@ -15,6 +16,7 @@ export type ButtonProps = DistributiveOmit<ButtonRootProps, "variant"> & {
   title: string;
   preset?: ButtonPreset;
   loading?: boolean;
+  leftIcon?: ReactNode;
 };
 
 export function Button({
@@ -22,6 +24,7 @@ export function Button({
   preset = "primary",
   loading = false,
   isDisabled = false,
+  leftIcon,
   className,
   ...props
 }: ButtonProps) {
@@ -40,12 +43,15 @@ export function Button({
       {loading ? (
         <ActivityIndicator color={indicatorColor} />
       ) : (
-        <Text
-          size="body-md"
-          weight="bold"
-          className={buttonLabel({ preset, disabled: isButtonDisabled })}>
-          {title}
-        </Text>
+        <>
+          {leftIcon && <View className="mr-3">{leftIcon}</View>}
+          <Text
+            size="body-md"
+            weight="bold"
+            className={buttonLabel({ preset, disabled: isButtonDisabled })}>
+            {title}
+          </Text>
+        </>
       )}
     </HeroButton>
   );
