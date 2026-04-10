@@ -1,4 +1,5 @@
 import { animations } from "@assets";
+import { useSettingsService } from "@services";
 import { useState } from "react";
 import { View } from "react-native";
 
@@ -7,15 +8,22 @@ import { ContentSection } from "./components/content-section";
 import { onboardingPages } from "./onboarding-data";
 
 export function Onboarding() {
+  const { finishOnboarding } = useSettingsService();
   const [pageIndex, setPageIndex] = useState(0);
 
   const page = onboardingPages[pageIndex];
 
   function onPressNext() {
     const isLastPage = pageIndex === onboardingPages.length - 1;
-    if (!isLastPage) {
+    if (isLastPage) {
+      finishOnboarding();
+    } else {
       setPageIndex(pageIndex + 1);
     }
+  }
+
+  function onPressSkip() {
+    finishOnboarding();
   }
 
   return (
@@ -29,7 +37,7 @@ export function Onboarding() {
         total={page.total}
         isLast={page.isLast}
         onPressNext={onPressNext}
-        onPressSkip={() => {}}
+        onPressSkip={onPressSkip}
       />
     </View>
   );
