@@ -1,7 +1,7 @@
 import { colors } from '@theme';
 import { cva } from "class-variance-authority";
 
-export type ButtonPreset = "primary" | "outline" | "ghost" | "danger";
+export type ButtonPreset = "primary" | "outline" | "ghost" | "danger" | "white" | "black";
 
 export const buttonContainer = cva(
   "w-full rounded-xl h-[50px] flex-row items-center justify-center px-5",
@@ -12,6 +12,8 @@ export const buttonContainer = cva(
         outline: "border border-primary bg-transparent",
         ghost: "bg-transparent",
         danger: "bg-red-500",
+        white: "bg-white border border-muted",
+        black: "bg-foreground",
       },
       disabled: {
         true: "opacity-50",
@@ -30,6 +32,8 @@ export const buttonIndicatorColor: Record<ButtonPreset, string> = {
   outline: colors.primary,
   ghost: colors.primary,
   danger: colors.white,
+  white: colors.foreground,
+  black: colors.white,
 };
 
 export const buttonLabel = cva("", {
@@ -39,6 +43,8 @@ export const buttonLabel = cva("", {
       outline: "text-primary",
       ghost: "text-primary",
       danger: "text-white",
+      white: "text-foreground",
+      black: "text-white",
     },
     disabled: {
       true: "text-muted",

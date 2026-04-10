@@ -3,11 +3,12 @@ import { type NativeStackScreenProps } from "@react-navigation/native-stack";
 import { type AuthStackParamList } from "./auth-stack";
 import { type OnboardingStackParamList } from "./onboarding-stack";
 
+export type RootParamListType = AuthStackParamList & OnboardingStackParamList;
+
 declare global {
   namespace ReactNavigation {
-    interface RootParamList
-      extends AuthStackParamList,
-        OnboardingStackParamList {}
+    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+    interface RootParamList extends RootParamListType {}
   }
 }
 
