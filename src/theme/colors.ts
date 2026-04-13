@@ -11,3 +11,7 @@ export const colors = {
   secondary: "#06D6B4",
   tertiary: "#00D9FE",
 };
+
+export const gradients: Record<string, [string, string]> = {
+  screenBackground: ["#E1F5EE", "#FFFFFF"],
+};

@@ -28,6 +28,8 @@ const user: UserCredentials = {
 
 If a type cast with `as` seems necessary, stop and fix the underlying type instead.
 
+This includes `as const` — never use it. Instead, type the value explicitly with a proper type or interface.
+
 ## Navigation typing
 
 `useNavigation()` is typed globally via `src/routes/navigation-type.ts`.

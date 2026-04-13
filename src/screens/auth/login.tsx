@@ -1,17 +1,21 @@
-import { Button, Icon, Text } from "@components";
+import { Button, Icon, Page, Text } from "@components";
 import { colors } from "@theme";
 import { View } from "react-native";
 
 export function Login() {
   return (
-    <View className="flex-1 bg-primary-frost">
+    <Page hidePadding>
       <View className="flex-1 items-center justify-center px-6">
         <View className="items-center gap-4 mb-8">
           <View className="w-16 h-16 rounded-2xl bg-primary-light items-center justify-center">
             <Icon name="utensils" size={32} color={colors.white} />
           </View>
 
-          <Text size="headline-md" weight="bold" align="center" className="text-primary">
+          <Text
+            size="headline-md"
+            weight="bold"
+            align="center"
+            className="text-primary">
             ViuFez
           </Text>
         </View>
@@ -41,6 +45,6 @@ export function Login() {
           />
         </View>
       </View>
-    </View>
+    </Page>
   );
 }
