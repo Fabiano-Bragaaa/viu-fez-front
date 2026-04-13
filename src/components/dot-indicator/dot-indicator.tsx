@@ -1,13 +1,13 @@
-import { useEffect } from 'react';
-import { View } from 'react-native';
+import { useEffect } from "react";
+import { View } from "react-native";
 import Animated, {
   interpolateColor,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
-} from 'react-native-reanimated';
+} from "react-native-reanimated";
 
-import { dotConfig, dotIndicatorContainer } from './dot-indicator-preset';
+import { dotConfig, dotIndicatorContainer } from "./dot-indicator-preset";
 
 type DotIndicatorProps = {
   total: number;
@@ -38,7 +38,10 @@ function Dot({ isActive }: DotProps) {
 
   return (
     <Animated.View
-      style={[{ height: dotConfig.height, borderRadius: dotConfig.borderRadius }, animatedStyle]}
+      style={[
+        { height: dotConfig.height, borderRadius: dotConfig.borderRadius },
+        animatedStyle,
+      ]}
     />
   );
 }

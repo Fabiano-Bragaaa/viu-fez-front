@@ -6,3 +6,4 @@
 @.claude/instructions/typescript.md
 @.claude/instructions/git-flow.md
 @.claude/instructions/functions.md
+@.claude/instructions/notion.md
