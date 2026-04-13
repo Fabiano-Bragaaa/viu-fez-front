@@ -1,8 +1,10 @@
+import { AppleIcon, GoogleIcon } from "@assets";
 import { Button, Icon, Page, Text } from "@components";
-import { colors } from "@theme";
+import { useAppTheme } from "@hooks";
 import { View } from "react-native";
 
 export function Login() {
+  const { colors } = useAppTheme();
   return (
     <Page hidePadding>
       <View className="flex-1 items-center justify-center px-6">
@@ -33,14 +35,14 @@ export function Login() {
           <Button
             title="Continuar com Google"
             preset="white"
-            leftIcon={<Icon name="globe" size={20} color={colors.foreground} />}
+            leftIcon={<GoogleIcon size={20} />}
             onPress={() => {}}
           />
 
           <Button
             title="Continuar com Apple"
             preset="black"
-            leftIcon={<Icon name="apple" size={20} color={colors.white} />}
+            leftIcon={<AppleIcon size={20} />}
             onPress={() => {}}
           />
         </View>
