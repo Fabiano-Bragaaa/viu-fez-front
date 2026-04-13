@@ -5,3 +5,6 @@ export const animations = {
 };
 
 export const images = {};
+
+export { AppleIcon } from "./svgs/apple-icon";
+export { GoogleIcon } from "./svgs/google-icon";
