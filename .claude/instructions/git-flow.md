@@ -25,6 +25,7 @@ Create PRs via the `gh` CLI:
 ```
 git push -u origin <branch>
 gh pr create --title "..." --base develop --head <branch> --body "..."
+gh pr view --web
 ```
 
 The default base branch for PRs is `develop`. Only use `main` if explicitly requested.
