@@ -2,6 +2,7 @@
   "expo": {
     "name": "viu-fez",
     "slug": "viu-fez",
+    "scheme": "viufez",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
