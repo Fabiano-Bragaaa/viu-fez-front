@@ -1,10 +1,17 @@
 import { AppleIcon, GoogleIcon } from "@assets";
 import { Button, Icon, Page, Text } from "@components";
+import { useSignInWithGoogle } from "@domain";
 import { useAppTheme } from "@hooks";
 import { View } from "react-native";
 
 export function Login() {
   const { colors } = useAppTheme();
+  const { mutate: signInWithGoogle } = useSignInWithGoogle();
+
+  function handleSignInWithGoogle() {
+    signInWithGoogle();
+  }
+
   return (
     <Page hidePadding>
       <View className="flex-1 items-center justify-center px-6">
@@ -36,7 +43,7 @@ export function Login() {
             title="Continuar com Google"
             preset="white"
             leftIcon={<GoogleIcon size={20} />}
-            onPress={() => {}}
+            onPress={handleSignInWithGoogle}
           />
 
           <Button
