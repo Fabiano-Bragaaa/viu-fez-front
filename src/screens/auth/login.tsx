@@ -6,7 +6,7 @@ import { View } from "react-native";
 
 export function Login() {
   const { colors } = useAppTheme();
-  const { mutate: signInWithGoogle } = useSignInWithGoogle();
+  const { mutate: signInWithGoogle, isLoading } = useSignInWithGoogle();
 
   function handleSignInWithGoogle() {
     signInWithGoogle();
@@ -44,6 +44,7 @@ export function Login() {
             preset="white"
             leftIcon={<GoogleIcon size={20} />}
             onPress={handleSignInWithGoogle}
+            loading={isLoading}
           />
 
           <Button
