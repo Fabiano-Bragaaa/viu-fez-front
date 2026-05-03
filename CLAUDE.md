@@ -7,3 +7,4 @@
 @.claude/instructions/git-flow.md
 @.claude/instructions/functions.md
 @.claude/instructions/notion.md
+@.claude/instructions/design-system.md
