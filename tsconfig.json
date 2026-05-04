@@ -19,7 +19,8 @@
       "@api": ["./src/api"],
       "@infra": ["./src/infra"],
       "@errors": ["./src/errors"],
-      "@types": ["./src/types"]
+      "@types": ["./src/types"],
+      "@animations": ["./src/animations"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "uniwind-types.d.ts"]
