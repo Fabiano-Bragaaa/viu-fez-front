@@ -23,6 +23,7 @@ module.exports = function (api) {
             "@infra": "./src/infra",
             "@errors": "./src/errors",
             "@types": "./src/types",
+            "@animations": "./src/animations",
           },
         },
       ],
