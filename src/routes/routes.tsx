@@ -1,5 +1,6 @@
 import { useAppFonts } from "@hooks";
 import { NavigationContainer } from "@react-navigation/native";
+import { useAuthStartup } from "@services";
 import { colors } from "@theme";
 import { ActivityIndicator, View } from "react-native";
 
@@ -26,6 +27,8 @@ const stacks: Record<Stacks, React.ReactNode> = {
 export function Routes() {
   const { fontsLoaded } = useAppFonts();
   const stack = useRouter();
+
+  useAuthStartup();
 
   if (!fontsLoaded) {
     return <LoadingScreen />;
