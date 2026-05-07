@@ -1,9 +1,10 @@
 import { type NativeStackScreenProps } from "@react-navigation/native-stack";
 
+import { type AppStackParamList } from "./app-stack";
 import { type AuthStackParamList } from "./auth-stack";
 import { type OnboardingStackParamList } from "./onboarding-stack";
 
-export type RootParamListType = AuthStackParamList & OnboardingStackParamList;
+export type RootParamListType = AppStackParamList & AuthStackParamList & OnboardingStackParamList;
 
 declare global {
   namespace ReactNavigation {
@@ -17,3 +18,6 @@ export type OnboardingScreenProps<T extends keyof OnboardingStackParamList> =
 
 export type AuthScreenProps<T extends keyof AuthStackParamList> =
   NativeStackScreenProps<AuthStackParamList, T>;
+
+export type AppScreenProps<T extends keyof AppStackParamList> =
+  NativeStackScreenProps<AppStackParamList, T>;
