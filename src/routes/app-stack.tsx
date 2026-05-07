@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View } from "react-native";
+import { Home } from "@screens";
 
 export type AppStackParamList = {
   Home: undefined;
@@ -7,14 +7,10 @@ export type AppStackParamList = {
 
 const { Navigator, Screen } = createNativeStackNavigator<AppStackParamList>();
 
-function HomePlaceholder() {
-  return <View className="flex-1 bg-background" />;
-}
-
 export function AppStack() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen name="Home" component={HomePlaceholder} />
+      <Screen name="Home" component={Home} />
     </Navigator>
   );
 }
