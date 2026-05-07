@@ -1,11 +1,13 @@
-import { useShowOnboarding } from "@services";
+import { useAuth, useAuthStore, useShowOnboarding } from "@services";
 
 export type Stacks = "loading" | "auth" | "onboarding" | "app";
 
 export function useRouter(): Stacks {
   const showOnboarding = useShowOnboarding();
+  const session = useAuth();
+  const isLoading = useAuthStore((state) => state.isLoading);
 
-  if (false) {
+  if (isLoading) {
     return "loading";
   }
 
@@ -13,7 +15,7 @@ export function useRouter(): Stacks {
     return "onboarding";
   }
 
-  if (false) {
+  if (session) {
     return "app";
   }
 
